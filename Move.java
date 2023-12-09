@@ -74,4 +74,14 @@ class Move {
 			item.display();
 		}
 	}
+
+	public int find(String objectName) {
+		for (Item item : items) {
+			int result = item.find(objectName);
+			if (result > 0) {
+				return result;
+			}
+		}
+		return -1;
+	}
 }

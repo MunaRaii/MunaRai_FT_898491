@@ -30,7 +30,7 @@
 
             move.print();
 
-            System.out.println("The scarf is in the cardboard number " + move.find("scarf"));
+            System.out.println("The scarf is in the cardboard number " + move.find("scarf" ) + ".");
         }
     }
 
