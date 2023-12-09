@@ -38,6 +38,17 @@ class Move {
 			}
 		}
 
+		public void displayContents() {
+			for (Object item : items) {
+				if (item instanceof SingleObject) {
+					SingleObject singleObject = (SingleObject) item;
+					System.out.println(singleObject.getName());
+				} else if (item instanceof Box) {
+					Box subBox = (Box) item;
+					subBox.displayContents();
+				}
+			}
+		}
 
 		/* *************************************** */
 
