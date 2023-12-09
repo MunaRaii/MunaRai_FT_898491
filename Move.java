@@ -68,4 +68,10 @@ class Move {
 		items.add(item);
 	}
 
+	public void print() {
+		System.out.println("The objects of my move are:");
+		for (Item item : items) {
+			item.display();
+		}
+	}
 }
