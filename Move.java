@@ -1,4 +1,5 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 abstract class Item {
 	public abstract void display();
@@ -24,9 +25,34 @@ class SingleObject extends Item {
 	}
 }
 
+class Box extends Item {
+	private List<Item> items;
+	private int boxNumber;
 
+	public Box(int boxNumber) {
+		this.items = new ArrayList<>();
+		this.boxNumber = boxNumber;
+	}
 
+	public void addItem(Item item) {
+		items.add(item);
+	}
 
+	@Override
+	public void display() {
+		for (Item item : items) {
+			item.display();
+		}
+	}
 
-
-
+	@Override
+	public int find(String objectName) {
+		for (Item item : items) {
+			int result = item.find(objectName);
+			if (result > 0) {
+				return boxNumber;
+			}
+		}
+		return -1;
+	}
+}
