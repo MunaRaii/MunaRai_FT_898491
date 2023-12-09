@@ -56,3 +56,16 @@ class Box extends Item {
 		return -1;
 	}
 }
+
+class Move {
+	private List<Item> items;
+
+	public Move(int initialCapacity) {
+		this.items = new ArrayList<>(initialCapacity);
+	}
+
+	public void addItem(Item item) {
+		items.add(item);
+	}
+
+}
